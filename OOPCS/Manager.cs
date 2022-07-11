@@ -2,7 +2,7 @@
 
 public class Manager: Employee
 {
-    public string DepartmentName { get; set; }
+    private string DepartmentName { get; set; }
 
     public Manager(string departmentName) : base()
     {

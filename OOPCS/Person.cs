@@ -7,6 +7,8 @@ public class Person
     private int Age { get; set; }
     private double Height { get; set; }
 
+    protected date11 DOB { get; set; }
+
     public Person(string name, string gender, int age, double height)
     {
         Name = name;
@@ -21,12 +23,20 @@ public class Person
         Gender = "Male";
     }
 
+    public Person(string name, date11 dob)
+    {
+        Name = name;
+        Gender = "Male";
+        DOB = new date11(dob);
+    }
+
     public Person()
     {
         Name = "DEFAULT";
         Gender = "Male";
         Age = 30;
         Height = 1.8;
+        DOB = new date11(1, 1, 2000);
     }
 
     public void Eat()
@@ -95,6 +105,7 @@ public class Person
         Console.WriteLine("Gender: " + Gender);
         Console.WriteLine("Age: " + Age);
         Console.WriteLine("Height: " + Height);
+        DOB.PrintDateDetails();
     }
 
 }

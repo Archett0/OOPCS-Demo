@@ -13,6 +13,13 @@ public class date11
         _year = year;
     }
 
+    public date11(date11 newDate11)
+    {
+        _day = newDate11._day;
+        _month = newDate11._month;
+        _year = newDate11._year;
+    }
+
     public int Day
     {
         get => _day;
