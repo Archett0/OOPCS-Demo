@@ -24,7 +24,8 @@
 
             // Employee employee = new Employee("Jack", "Male", 30, 1.7, 121, "Mail001");
             // employee.PrintDetails();
-            Manager manager = new Manager("IT Department");
+
+            var manager = new Manager("IT Department");
             manager.PrintDetails();
         }
     }
