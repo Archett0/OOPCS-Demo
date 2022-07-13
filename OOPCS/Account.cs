@@ -50,4 +50,19 @@ public class Account
     {
         return "Account: " + "AccountNbr: " + AcctNumber + ", AcctHolderId: " + AcctHolderId + ", Balance: " + Balance;
     }
+
+    public virtual double CalculateInterest()
+    {
+        return 0;
+    }
+
+    /**
+     * The method deposit the interest amount, returns by
+     * CalculateInterest() method of this
+     * account to its balance.
+     */
+    public virtual void CreditInterest()
+    {
+        Balance += CalculateInterest();
+    }
 }

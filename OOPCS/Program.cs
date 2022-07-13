@@ -1,4 +1,5 @@
-﻿namespace OOPCS
+﻿/*
+namespace OOPCS
 {
     public class Program
     {
@@ -74,3 +75,4 @@
         }
     }
 }
+*/
