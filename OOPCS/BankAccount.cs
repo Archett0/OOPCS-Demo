@@ -3,20 +3,20 @@
 public abstract class BankAccount
 {
     protected string accountNo;
-    protected double balance;
+    protected float balance;
 
-    public BankAccount(string accountNo, double balance)
+    public BankAccount(string accountNo, float balance)
     {
         this.accountNo = accountNo;
         this.balance = balance;
     }
 
-    public double GetBalance()
+    public float GetBalance()
     {
         return balance;
     }
 
-    public void Deposit(double amt)
+    public void Deposit(float amt)
     {
         if (amt > 0)
         {
@@ -24,13 +24,13 @@ public abstract class BankAccount
         }
     }
 
-    public bool Withdraw(double amt)
+    public bool Withdraw(float amt)
     {
         if (amt <= 0 || balance < amt) return false;
         balance -= amt;
         return true;
     }
 
-    public abstract double GetDailyInterest();
-    public abstract bool TransferToAccount(BankAccount account, double amt);
+    public abstract float GetDailyInterest();
+    public abstract bool TransferToAccount(BankAccount account, float amt);
 }

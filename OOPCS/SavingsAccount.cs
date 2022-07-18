@@ -4,27 +4,19 @@ public class SavingsAccount : BankAccount
 {
     protected static double interest;
 
-    public SavingsAccount(string acctNumber, double balance) : base(acctNumber, balance)
+    public SavingsAccount(string acctNumber, float balance) : base(acctNumber, balance)
     {
         interest = 0.03f;
     }
 
-    public override double GetDailyInterest()
+    public override float GetDailyInterest()
     {
-        return (interest / 365) * balance;
+        return (float)((interest / 365) * balance);
     }
 
-    public override bool TransferToAccount(BankAccount account, double amt)
+    public override bool TransferToAccount(BankAccount account, float amt)
     {
         return false;
     }
 
-    /**
-     * This method returns the values of the attributes
-     * of the current object in a more readable format
-     */
-    public override string ToString()
-    {
-        return "(SavingsAccount) " + base.ToString();
-    }
 }

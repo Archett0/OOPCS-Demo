@@ -4,12 +4,16 @@ public class TestSavingsAccount
 {
     static void Main(string[] args)
     {
-        BankAccount account = new SavingsAccount("Sa-001", 0.0f);
+        BankAccount savingsAccount = new SavingsAccount("Sa-001", 100.0f);
+        BankAccount checkingAccount = new CheckingAccount("CA-001", 500.0f);
 
-        account.Deposit(100.0);
-        account.Withdraw(50.0);
+        checkingAccount.TransferToAccount(savingsAccount, 200.0f);
 
-        Console.WriteLine("Balance: $" + account.GetBalance());
-        Console.WriteLine("Daily Interest: $" + Math.Round(account.GetDailyInterest(), 3));
+        // savingsAccount.Deposit(100.0);
+        // savingsAccount.Withdraw(50.0);
+
+        Console.WriteLine("Savings Balance: $" + savingsAccount.GetBalance());
+        Console.WriteLine("Checking Balance: $" + checkingAccount.GetBalance());
+        Console.WriteLine("Daily Interest: $" + Math.Round(checkingAccount.GetDailyInterest(), 3));
     }
 }
