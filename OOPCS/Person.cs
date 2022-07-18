@@ -1,111 +1,22 @@
 ﻿namespace OOPCS;
 
-public class Person
+public class Person: IClickable
 {
-    private string Name { get; set; }
-    private string Gender { get; set; }
-    private int Age { get; set; }
-    private double Height { get; set; }
+    private int x, y;
 
-    protected date11 DOB { get; set; }
-
-    public Person(string name, string gender, int age, double height)
+    public Person(int x, int y)
     {
-        Name = name;
-        Gender = gender;
-        Age = age;
-        Height = height;
+        this.x = x;
+        this.y = y;
     }
 
-    public Person(string name)
+    public (int, int) GetPosition()
     {
-        Name = name;
-        Gender = "Male";
+        return (x, y);
     }
 
-    public Person(string name, date11 dob)
+    public void OnClick(Click click)
     {
-        Name = name;
-        Gender = "Male";
-        DOB = new date11(dob);
+        Console.WriteLine("I'm clicked at {0}, {1}", click.X, click.Y);
     }
-
-    public Person()
-    {
-        Name = "DEFAULT";
-        Gender = "Male";
-        Age = 30;
-        Height = 1.8;
-        DOB = new date11(1, 1, 2000);
-    }
-
-    public void Eat()
-    {
-        Console.WriteLine(Name + " is eating...");
-    }
-
-    public void Talk()
-    {
-        Console.WriteLine(Name + " is talking...");
-    }
-
-    public void Sleep()
-    {
-        Console.WriteLine(Name + " is sleeping...");
-    }
-
-    public void Drink()
-    {
-        Console.WriteLine(Name + " is drinking...");
-    }
-
-    public string GetName()
-    {
-        return Name;
-    }
-
-    public string GetGender()
-    {
-        return Gender;
-    }
-
-    public int GetAge()
-    {
-        return Age;
-    }
-
-    public double GetHeight()
-    {
-        return Height;
-    }
-
-    public void SetName(string name)
-    {
-        Name = name;
-    }
-
-    public void SetGender(string gender)
-    {
-        Gender = gender;
-    }
-
-    public void SetAge(int age)
-    {
-        Age = age;
-    }
-
-    public void SetHeight(double height)
-    {
-        Height = height;
-    }
-
-    public void PrintDetails()
-    {
-        Console.WriteLine("Name: " + Name);
-        Console.WriteLine("Gender: " + Gender);
-        Console.WriteLine("Age: " + Age);
-        Console.WriteLine("Height: " + Height);
-        DOB.PrintDateDetails();
-    }
-
 }
