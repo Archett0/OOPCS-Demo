@@ -1,30 +1,22 @@
 ﻿namespace OOPCS;
 
-public class SavingsAccount : Account
+public class SavingsAccount : BankAccount
 {
-    private static readonly double interest = 0.01;
+    protected static double interest;
 
-    public SavingsAccount(string acctNumber, string acctHolderId, double balance) : base(acctNumber, acctHolderId, balance)
+    public SavingsAccount(string acctNumber, double balance) : base(acctNumber, balance)
     {
+        interest = 0.03f;
     }
 
-    /**
-     * The method return the interest of this account.
-     * Savings Account earns 1% interest of its balance.
-     */
-    public override double CalculateInterest()
+    public override double GetDailyInterest()
     {
-        return Balance * interest;
+        return (interest / 365) * balance;
     }
 
-    /**
-     * The method deposit the interest amount, returns by
-     * CalculateInterest() method of this
-     * account to its balance.
-     */
-    public override void CreditInterest()
+    public override bool TransferToAccount(BankAccount account, double amt)
     {
-        Balance += CalculateInterest();
+        return false;
     }
 
     /**
