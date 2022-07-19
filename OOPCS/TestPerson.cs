@@ -1,4 +1,4 @@
-﻿namespace OOPCS;
+﻿/*namespace OOPCS;
 
 public class TestPerson
 {
@@ -16,4 +16,4 @@ public class TestPerson
             person.OnClick(click);
         }
     }
-}
+}*/

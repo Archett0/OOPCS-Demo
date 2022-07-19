@@ -101,9 +101,9 @@ public class GameMenu
         Console.WriteLine("Game ends.");
     }
 
-    private static void Main(string[] args)
-    {
-        var game = new GameMenu(new Checkerboard());
-        game.ShowStartMenu();
-    }
+    // private static void Main(string[] args)
+    // {
+    //     var game = new GameMenu(new Checkerboard());
+    //     game.ShowStartMenu();
+    // }
 }
